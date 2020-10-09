@@ -41,7 +41,6 @@ public class InvertibleComparator<T> implements Comparator<T>, Serializable {
 
     private boolean ascending = true;
 
-
     /**
      * Create an InvertibleComparator that sorts ascending by default.
      * For the actual comparison, the specified Comparator will be used.
@@ -68,6 +67,8 @@ public class InvertibleComparator<T> implements Comparator<T>, Serializable {
 
     /**
      * Return the sort order: ascending (true) or descending (false).
+     *
+     * @return sort order
      */
     public boolean isAscending() {
         return this.ascending;
@@ -75,19 +76,20 @@ public class InvertibleComparator<T> implements Comparator<T>, Serializable {
 
     /**
      * Specify the sort order: ascending (true) or descending (false).
+     *
+     * @param ascending sort order
      */
     public void setAscending(boolean ascending) {
         this.ascending = ascending;
     }
 
     /**
-     * Invert the sort order: ascending -> descending or
-     * descending -> ascending.
+     * Invert the sort order: ascending {@code ->} descending or
+     * descending {@code ->} ascending.
      */
     public void invertOrder() {
         this.ascending = !this.ascending;
     }
-
 
     @Override
     public int compare(T o1, T o2) {

@@ -180,6 +180,8 @@ public @interface AliasFor {
      * <p>Intended to be used instead of {@link #attribute} when {@link #annotation}
      * is not declared &mdash; for example: {@code @AliasFor("value")} instead of
      * {@code @AliasFor(attribute = "value")}.
+     *
+     * @return attribute
      */
     @AliasFor("attribute")
     String value() default "";
@@ -187,6 +189,7 @@ public @interface AliasFor {
     /**
      * The name of the attribute that <em>this</em> attribute is an alias for.
      *
+     * @return value
      * @see #value
      */
     @AliasFor("value")
@@ -196,6 +199,8 @@ public @interface AliasFor {
      * The type of annotation in which the aliased {@link #attribute} is declared.
      * <p>Defaults to {@link Annotation}, implying that the aliased attribute is
      * declared in the same annotation as <em>this</em> attribute.
+     *
+     * @return annotation
      */
     Class<? extends Annotation> annotation() default Annotation.class;
 

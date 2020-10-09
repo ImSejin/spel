@@ -51,6 +51,8 @@ public interface GenericConverter {
      * <p>Each entry is a convertible source-to-target type pair.
      * <p>For {@link ConditionalConverter conditional converters} this method may return
      * {@code null} to indicate all source-to-target pairs should be considered.
+     *
+     * @return convertible types
      */
     Set<ConvertiblePair> getConvertibleTypes();
 

@@ -39,6 +39,11 @@ public interface ConverterRegistry {
      * <p>Allows for a Converter to be reused for multiple distinct pairs without
      * having to create a Converter class for each pair.
      *
+     * @param sourceType source type
+     * @param targetType target type
+     * @param converter  converter
+     * @param <S>        source
+     * @param <T>        target
      * @since 3.1
      */
     <S, T> void addConverter(Class<S> sourceType, Class<T> targetType, Converter<? super S, ? extends T> converter);
@@ -52,6 +57,7 @@ public interface ConverterRegistry {
      * Add a ranged converter factory to this registry.
      * The convertible source/target type pair is derived from the ConverterFactory's parameterized types.
      *
+     * @param factory factory
      * @throws IllegalArgumentException if the parameterized types could not be resolved
      */
     void addConverterFactory(ConverterFactory<?, ?> factory);

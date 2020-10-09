@@ -96,6 +96,7 @@ public abstract class AnnotatedElementUtils {
      * typically for use with other methods on {@link AnnotatedElementUtils}.
      *
      * @param annotations the annotations to expose through the {@code AnnotatedElement}
+     * @return {@link AnnotatedElement}
      * @since 4.3
      */
     public static AnnotatedElement forAnnotations(Annotation... annotations) {

@@ -30,6 +30,7 @@ public abstract class Comparators {
     /**
      * Return a {@link Comparable} adapter.
      *
+     * @return {@link ComparableComparator#INSTANCE}
      * @see ComparableComparator#INSTANCE
      */
     @SuppressWarnings("unchecked")
@@ -41,6 +42,7 @@ public abstract class Comparators {
      * Return a {@link Comparable} adapter which accepts
      * null values and sorts them lower than non-null values.
      *
+     * @return {@link NullSafeComparator#NULLS_LOW}
      * @see NullSafeComparator#NULLS_LOW
      */
     @SuppressWarnings("unchecked")
@@ -51,6 +53,10 @@ public abstract class Comparators {
     /**
      * Return a decorator for the given comparator which accepts
      * null values and sorts them lower than non-null values.
+     *
+     * @param comparator comparator
+     * @param <T>        type
+     * @return {@link NullSafeComparator}
      */
     public static <T> Comparator<T> nullsLow(Comparator<T> comparator) {
         return new NullSafeComparator<>(comparator, true);
@@ -60,6 +66,8 @@ public abstract class Comparators {
      * Return a {@link Comparable} adapter which accepts
      * null values and sorts them higher than non-null values.
      *
+     * @param <T> type
+     * @return {@link NullSafeComparator#NULLS_HIGH}
      * @see NullSafeComparator#NULLS_HIGH
      */
     @SuppressWarnings("unchecked")
@@ -70,6 +78,10 @@ public abstract class Comparators {
     /**
      * Return a decorator for the given comparator which accepts
      * null values and sorts them higher than non-null values.
+     *
+     * @param comparator comparator
+     * @param <T>        type
+     * @return {@link NullSafeComparator}
      */
     public static <T> Comparator<T> nullsHigh(Comparator<T> comparator) {
         return new NullSafeComparator<>(comparator, false);

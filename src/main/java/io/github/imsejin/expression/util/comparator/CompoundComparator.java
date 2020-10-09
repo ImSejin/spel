@@ -46,7 +46,6 @@ public class CompoundComparator<T> implements Comparator<T>, Serializable {
 
     private final List<InvertibleComparator> comparators;
 
-
     /**
      * Construct a CompoundComparator with initially no Comparators. Clients
      * must add at least one Comparator before calling the compare method or an
@@ -170,11 +169,12 @@ public class CompoundComparator<T> implements Comparator<T>, Serializable {
 
     /**
      * Returns the number of aggregated comparators.
+     *
+     * @return comparators's size
      */
     public int getComparatorCount() {
         return this.comparators.size();
     }
-
 
     @Override
     @SuppressWarnings("unchecked")
